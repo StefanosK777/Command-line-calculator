@@ -1,0 +1,40 @@
+#This program is Command-Line Calculator
+#It performs basic arithmetic operations
+
+#WE start with a loop to keep the calculator running intil the user quits
+while True:
+    print("\n---Calculator---")
+    
+    #Ask the user to enter the first number
+    num1 = float(input("Enter the first number: "))
+    
+    #Ask the user to choose an operator
+    operator = input("Enter the operator (+, -, *, /): ")
+
+    #Ask for the second number
+    num2 = float(input("Enter the second number: "))
+
+    #Perform the calculation based on the operator
+    if operator == "+":
+        result = num1 + num2 # Addition
+    
+    elif operator == "-":
+        result = num1 - num2 # Subtraction
+
+    elif operator == "*":
+        result = num1 * num2 # Multiplication
+
+    elif operator == "/":
+        if num2 != 0:
+            result = num1 / num2 # Division
+    else:
+        result = "Error: Division by zero is not allowed."
+    
+    # Print the result 
+    print("Result:", result)
+
+    # Ask the user if they want to perform another calculation
+    choice = input("Do you want to perform another calculation? (yes/no): ")
+    if choice.lower() != "yes":
+        print("Goodbye!")
+        break
